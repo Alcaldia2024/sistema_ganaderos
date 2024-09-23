@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Registro de Ganaderos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo2.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Registro de Ganaderos</h1>
+
+
+    </header>
+    
+    <nav class="menu">
+        <ul>
+            <li><a href="#" id="crearGanaderos">Crear Ganaderos</a></li>
+            <li><a href="{{ url_for('ver_ganaderos') }}">Ver Ganaderos</a></li>
+            <li> <a href="{{ url_for('logout') }}">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <main id="contenido">
+        <form action="{{ url_for('crear_ganadero') }}" method="POST" enctype="multipart/form-data">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br>
+            <label for="apellido">Apellido:</label><br>
+            <input type="text" id="apellido" name="apellido" required><br>
+            <label for="ci">C.I.:</label><br>
+            <input type="text" id="ci" name="ci" required><br>
+            <label for="refMarca">RefMarca:</label><br>
+            <input type="text" id="refMarca" name="refMarca" required><br>
+            <label for="estancia">Estancia:</label><br>
+            <input type="text" id="estancia" name="estancia" required><br>
+            <label for="imagenMarca">Imagen de la Marca:</label><br>
+            <input type="file" id="imagenMarca" name="imagenMarca" accept="image/*" required><br>
+            <label for="carimbo">Carimbo:</label><br>
+            <input type="text" id="carimbo" name="carimbo" required><br> <!-- Cambié refcarimbo a carimbo -->
+
+            <label for="imagenCarimbo">Imagen del Carimbo:</label><br>
+            <input type="file" id="imagenCarimbo" name="imagenCarimbo" required><br>
+
+            <br>
+            <input type="submit" value="Registrar">
+        </form>
+    </main>
+</body>
+</html>

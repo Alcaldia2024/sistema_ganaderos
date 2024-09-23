@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloEditar.css') }}">
+    <title>Editar Ganadero</title>
+</head>
+<body>
+    <h1>Editar Ganadero</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        Nombre: <input type="text" name="nombre" value="{{ ganadero[1] }}"><br> <br>
+        Apellido: <input type="text" name="apellido" value="{{ ganadero[2] }}"><br> <br>
+        CI: <input type="text" name="ci" value="{{ ganadero[3] }}"><br> <br>
+        Ref. Marca: <input type="text" name="refMarca" value="{{ ganadero[4] }}"><br> <br>
+        Estancia: <input type="text" name="estancia" value="{{ ganadero[5] }}"><br> <br>
+        Imagen Actual: <img src="{{ url_for('static', filename='uploads/' ~ ganadero[6]) }}" width="100"><br> <br>
+        Subir nueva imagen: <input type="file" name="imagenMarca"><br> <br>
+        Carimbo: <input type="text" name="carimbo" value="{{ ganadero[7] }}"><br> <br>
+        Imagen Carimbo Actual: <img src="{{ url_for('static', filename='uploads/' ~ ganadero[8]) }}" width="100"><br> <br>
+        Subir nueva imagen carimbo: <input type="file" name="imagenCarimbo"><br> 
+         <br>
+        <button type="submit" style="display:inline;">Guardar cambios</button>
+        <button > <a href="{{ url_for('ver_ganaderos') }}">Cancelar</a></button>
+
+    </form>
+
+   
+</body>
+</html>
